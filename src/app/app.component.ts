@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'formacion_angular_pildoras_2209_001';
-
+  title = 'TITLE: ';
+  saludo = "Lista de Eventos disponibles"
 }
