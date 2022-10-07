@@ -1,9 +1,19 @@
-<span style="color: red; font-weight: bold">{{ title }} EVENTOS</span>
+<section class="section-header">
+  <span class="header_title" style="color: red; font-weight: bold">{{ title }} EVENTOS</span>
 
-<br/>
+  <br/>
 
-<span>Saludo: {{saludo}}</span>
+  <span>Saludo: {{saludo}}</span>
 
-<br/>
+  <br/>
+<!--
+  <h2 class="header_title">Tweempus</h2>
+  <button class="header_auth" *ngIf="!checkLogin()">Regístrate</button>
+  <button class="header_auth" *ngIf="checkLogin()" (click)="logOut()">Cerrar Sesión</button>
+-->
+</section>
 
 <app-eventos></app-eventos>
+<app-evento></app-evento>
+<app-evento></app-evento>
+<app-evento></app-evento>
