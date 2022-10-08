@@ -11,6 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventoComponent implements OnInit {
 
+  titulo_eve="Fin de Año montañero. Pirineo Aragonés.";
+  fechaidatru_eve="2021-12-28";
+  nivel_eve="Medio-alto";
+  private nparticipantes_eve=10;
+
+  getNparticipantes_eve(){
+    return this.nparticipantes_eve;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
