@@ -17,6 +17,25 @@ export class EventoComponent implements OnInit {
   private nparticipantes_eve=10;
   apodo_prs="...";
 
+  habilitacionCuadro=false;
+  userRegistrado=false;
+  textoRegistro="No hay nadie registrado"
+
+  getRegistroUsuario(){
+    this.userRegistrado=false;
+  }
+
+  setRegistroUsuario(event:Event){
+    //alert ("El usuario se acaba de registrar")
+    //this.textoRegistro="El usuario se acaba de registrar"
+    //alert(event.target);
+    if((<HTMLInputElement>event.target).value=="si"){
+      this.textoRegistro="El usuario se acaba de registrar"
+    }else{
+      this.textoRegistro="No hay nadie registrado"
+    }
+  }
+
   llamaApodo_prs(value:string){
   }
 
