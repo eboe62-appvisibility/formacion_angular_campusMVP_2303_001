@@ -15,6 +15,10 @@ export class EventoComponent implements OnInit {
   fechaidatru_eve="2021-12-28";
   nivel_eve="Medio-alto";
   private nparticipantes_eve=10;
+  apodo_prs="...";
+
+  llamaApodo_prs(value:string){
+  }
 
   getNparticipantes_eve(){
     return this.nparticipantes_eve;
