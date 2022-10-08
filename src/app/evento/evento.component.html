@@ -16,15 +16,26 @@
     <p>Nº Participantes: {{getNparticipantes_eve()<=10? "Aforo limitado por Covid (10)":getNparticipantes_eve()}}</p>
     <p>Nombre del inscrito: {{apodo_prs.value}}</p>
 
-<!-- Opción 1: Mediante botón -->	
+<!-- Opción 1: Mediante botón 	
 	<input type="text" #apodo_prs>
 	<input type="button" class="login_button" value="Inscripción" (click)="llamaApodo_prs(apodo_prs.value)">
+-->
 <!-- Opción 2: Al salir del input
 	<input type="button" class="login_button" value="Inscripción" (keyup)="llamaApodo_prs(apodo_prs.value)">
 -->
-<!-- Opción 3: Según se va escribiendo
-	<input type="text" #apodo_prs (keyup)="0">
+<!-- Opción 3: Según se va escribiendo -->
+		<input type="text" #apodo_prs (keyup)="0" [disabled]="habilitacionCuadro">
+		<br/>
+		<br/>
+		{{textoRegistro}}
+		<br/>
+<!--		
+		<p>Registrado: <input type="checkbox" id="registro" [checked]="userRegistrado" (click)="setRegistroUsuario()"></p>
 -->
+		<p>Registrado: <input type="radio" value="si" name="nRegistro" id="registro" [checked]="userRegistrado" (click)="setRegistroUsuario($event)"></p>
+		<p>No registrado: <input type="radio" value="no" name="nRegistro" (click)="setRegistroUsuario($event)"></p>
+		<br/>
+		{{getRegistroUsuario()}}
 	</div>
 
 	<hr class="evento_line">
