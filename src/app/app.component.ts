@@ -32,6 +32,7 @@ export class AppComponent {
   cuadroPreferencia:number=0;
   cuadroEmail:string="";
 
+
   constructor(){
     this.titulos_eve=[
       {titulo_eve:"Fin de Año montañero. Pirineo Aragonés."},

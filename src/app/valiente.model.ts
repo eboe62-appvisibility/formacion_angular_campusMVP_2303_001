@@ -10,5 +10,4 @@ export class Valiente{
         this.preferencia_prs=preferencia_prs;
         this.email_prs=email_prs;
     }
-
 }
