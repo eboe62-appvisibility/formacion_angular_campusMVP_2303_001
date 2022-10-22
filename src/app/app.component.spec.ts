@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'formacion_angular_pildoras_2209_001'`, () => {
+  it(`should have as title 'formacion_angular_pildoras_2210_003'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('formacion_angular_pildoras_2209_001');
+    expect(app.title).toEqual('formacion_angular_pildoras_2210_003');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('formacion_angular_pildoras_2209_001 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('formacion_angular_pildoras_2210_003 app is running!');
   });
 });

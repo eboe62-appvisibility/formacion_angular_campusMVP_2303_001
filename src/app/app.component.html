@@ -1,16 +1,63 @@
-<section class="section-header">
-  <span class="header_title" style="color: red; font-weight: bold">{{ title }} AMIGOS DE LA MONTAÑA</span>
+<h1 style="text-align: center;">{{titulo}}</h1>
 
-  <br/>
+<form>
+  <input type="text" name="email_prs" placeholder="eMail" [(ngModel)]="email_prs"><br/>
+  <input type="text" name="contrasenna_prs" placeholder="Contraseña" [(ngModel)]="contrasenna_prs"><br/>
+  <input type="submit" value="Registrarse" (click)="registrarUsuario()"><br/>
+</form>
 
-  <span>Saludo: {{saludo}}</span>
-
-  <br/>
+<br/>
 <!--
-  <h2 class="header_title">Tweempus</h2>
-  <button class="header_auth" *ngIf="!checkLogin()">Regístrate</button>
-  <button class="header_auth" *ngIf="checkLogin()" (click)="logOut()">Cerrar Sesión</button>
+<p *ngIf="registrado; else sinRegistrar">{{email_prs}}<span [ngStyle]="{color: mensaje==' registrado con éxito' ? 'blue' : 'black'}">{{mensaje}}</span></p>
 -->
-</section>
+<p *ngIf="registrado; else sinRegistrar">{{email_prs}}<span [ngClass]="{paraRegistrados: mensaje==' registrado con éxito' ? 'blue' : 'black'}">{{mensaje}}</span></p>
 
-<app-eventos></app-eventos>
+<ng-template #sinRegistrar>
+  <p>No hay nadie registrado</p>
+</ng-template>
+
+<br><br>
+
+<ul>
+  <li *ngFor="let entrada of titulos_eve; let i=index" style="list-style-type: none"><span style="font-size: larger; font-weight: bold;">#{{i+1}}: {{entrada.titulo_eve}}</span>.</li>
+</ul>
+
+<br><br>
+
+<div class="container">
+  <div class="col"><h1>{{titulo}}</h1>
+    <br><br>
+    <form class="form-group row">
+      <div class="form-group col-md-3">
+        <label for="apodo">Apodo: </label>
+        <input type="text" name="apodo_prs" id="apodo_prs" placeholder="Apodo" class="form-control" [(ngModel)]="cuadroApodo">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre_prs" id="nombre_prs" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="preferencia">Preferencia: </label>
+        <input type="text" name="preferencia_prs" id="preferencia_prs" placeholder="Preferencia" class="form-control" [(ngModel)]="cuadroPreferencia">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="email">eMail: </label>
+        <input type="text" name="email_prs" id="email_prs" placeholder="eMail" class="form-control" [(ngModel)]="cuadroEmail">
+      </div>
+    </form>
+</div>
+<div class="col">
+  <button type="submit" class="btn btn-primary" (click)="agregarValiente()" style="margin-top: 35px">Agregar</button>
+</div>
+
+<br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let valiente of valientes; let i=index">
+        #{{i+1}} {{valiente.apodo_prs}} {{valiente.nombre_prs}} {{valiente.preferencia_prs}} {{valiente.email_prs}}
+      </div>
+    </div>
+  </div>
+</div>
