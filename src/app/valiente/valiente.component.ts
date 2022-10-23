@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IEvent } from 'src/interface/iEvent';
 import { Valiente } from './valiente.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-valiente',
+  templateUrl: './valiente.component.html',
+  styleUrls: ['./../app.component.css', './valiente.component.css']
+
 })
-export class AppComponent {
-  title = 'TITLE: ';
-  saludo = "Lista de Eventos disponibles"
-  titulo = 'Inicio de Sesión';
+export class ValienteComponent implements OnInit {
+  titulo1 = 'INICIO DE SESION';
   mensaje = "";
   registrado = false;
   email_prs: string = "";
   contrasenna_prs: string = "";
   titulos_eve: IEvent[];
+  titulo2 = 'INSCRIPCION';
 
   valientes:Valiente[]=[
     new Valiente("Mamel","Jose Manuel",9,"mame@gmail.com"),
@@ -34,7 +34,6 @@ export class AppComponent {
   cuadroPreferencia:number=0;
   cuadroEmail:string="";
 
-
   constructor(){
     this.titulos_eve=[
       {titulo_eve:"Fin de Año montañero. Pirineo Aragonés."},
@@ -48,6 +47,9 @@ export class AppComponent {
   registrarUsuario() {
     this.registrado = true
     this.mensaje = " registrado con éxito"
+  }
+
+  ngOnInit(): void {
   }
 
 }
