@@ -16,7 +16,7 @@
     <p>Nº Participantes: {{getNparticipantes_eve()<=10? "Aforo limitado por Covid (10)":getNparticipantes_eve()}}</p>
     <p>Nombre del inscrito: {{apodo_prs.value}}</p>
 
-<!-- Opción 1: Mediante botón 	
+<!-- Opción 1: Mediante botón
 	<input type="text" #apodo_prs>
 	<input type="button" class="login_button" value="Inscripción" (click)="llamaApodo_prs(apodo_prs.value)">
 -->
@@ -29,7 +29,7 @@
 		<br/>
 		{{textoRegistro}}
 		<br/>
-<!--		
+<!--
 		<p>Registrado: <input type="checkbox" id="registro" [checked]="userRegistrado" (click)="setRegistroUsuario()"></p>
 -->
 		<p>Registrado: <input type="radio" value="si" name="nRegistro" id="registro" [checked]="userRegistrado" (click)="setRegistroUsuario($event)"></p>
@@ -38,7 +38,11 @@
 		{{getRegistroUsuario()}}
 	</div>
 
-	<hr class="evento_line">
+  <app-inscritos *ngFor="let valiente of valientes; let i=index" [valienteDeLista]="valiente" [indice]="i"></app-inscritos>
+
+  <br><br>  
+
+  <hr class="evento_line">
 <!--
 	<div class="evento_fav">
     <a class="fav_icon" [ngClass]="{'fav_icon-selected': evento.favorite}" href="#">&#10084;</a>
@@ -46,3 +50,45 @@
 -->
 </section>
 
+<br><br>  
+
+<section class="section-header">
+    <h1>{{titulo2}}</h1>
+</section>
+<section class="valiente">
+	<div class="valiente_content">
+        <div class="container">
+            <div class="col">
+            <br><br>
+                <form class="form-group row">
+                    <div class="form-group col-md-3">
+                        <label for="apodo">Apodo: </label>
+                        <input type="text" name="apodo_prs" id="apodo_prs" placeholder="Apodo" class="form-control" [(ngModel)]="cuadroApodo">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" name="nombre_prs" id="nombre_prs" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="preferencia">Preferencia: </label>
+                        <input type="text" name="preferencia_prs" id="preferencia_prs" placeholder="Preferencia" class="form-control" [(ngModel)]="cuadroPreferencia">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="email">eMail: </label>
+                        <input type="text" name="email_prs" id="email_prs" placeholder="eMail" class="form-control" [(ngModel)]="cuadroEmail">
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-primary" (click)="agregarValiente()" style="margin-top: 35px">Agregar</button>
+            </div>
+        </div>
+
+
+    </div>
+
+	<br><br>  
+
+	<hr class="valiente_line">
+	
+	<br><br>  
+
+</section>

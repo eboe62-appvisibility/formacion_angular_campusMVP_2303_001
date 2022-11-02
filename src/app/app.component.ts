@@ -17,17 +17,7 @@ export class AppComponent {
   contrasenna_prs: string = "";
   titulos_eve: IEvent[];
 
-  valientes:Valiente[]=[
-    new Valiente("Mamel","Jose Manuel",9,"mame@gmail.com"),
-    new Valiente("Raúl","Raúl",8,"raul@gmail.com"),
-    new Valiente("apodo01","valNombre01",4,"apodo01@gmail.com"),
-    new Valiente("apodo02","valNombre02",6,"apodo02@gmail.com"),
-  ];
-
-  agregarValiente(){
-    let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
-    this.valientes.push(valiente);
-  }
+  valientes:Valiente[]=[];
 
   cuadroApodo:string="";
   cuadroNombre:string="";

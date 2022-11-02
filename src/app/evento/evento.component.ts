@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Valiente } from '../valiente.model';
 
 @Component({
   selector: 'app-evento',
@@ -16,6 +17,24 @@ export class EventoComponent implements OnInit {
   nivel_eve="Medio-alto";
   private nparticipantes_eve=10;
   apodo_prs="...";
+  titulo2 = 'INSCRIPCION';
+
+  valientes:Valiente[]=[
+    new Valiente("Mamel","Jose Manuel",9,"mame@gmail.com"),
+    new Valiente("Raúl","Raúl",8,"raul@gmail.com"),
+    new Valiente("apodo01","valNombre01",4,"apodo01@gmail.com"),
+    new Valiente("apodo02","valNombre02",6,"apodo02@gmail.com"),
+  ];
+
+  agregarValiente(){
+    let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
+    this.valientes.push(valiente);
+  }
+
+  cuadroApodo:string="";
+  cuadroNombre:string="";
+  cuadroPreferencia:number=0;
+  cuadroEmail:string="";
 
   habilitacionCuadro=false;
   userRegistrado=false;

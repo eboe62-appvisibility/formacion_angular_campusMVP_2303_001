@@ -6,10 +6,11 @@ import { EventosComponent } from './eventos/eventos.component';
 import { EventoComponent } from './evento/evento.component';
 import { ValienteComponent } from './valiente/valiente.component';
 import { FormsModule } from '@angular/forms';
+import { InscritosComponent } from './evento/inscritos/inscritos.component';
 
 @NgModule({
   declarations: [
-    AppComponent, EventosComponent, EventoComponent, ValienteComponent
+    AppComponent, EventosComponent, EventoComponent, ValienteComponent, InscritosComponent
   ],
   imports: [
     BrowserModule,
