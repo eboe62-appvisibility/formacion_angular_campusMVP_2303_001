@@ -4,7 +4,11 @@
       <div>
         #{{[indice+1]}} {{valienteDeLista.apodo_prs}} {{valienteDeLista.nombre_prs}} {{valienteDeLista.preferencia_prs}} {{valienteDeLista.email_prs}}
       </div>
-    </div>
+      <app-coche (plazaslibres_eveprs)="agregarPlazaslibres($event)"></app-coche>
+      <ul style="list-style: none;">
+        <li *ngFor="let item of items">{{item}}</li>
+      </ul>
+      </div>
   </div>
 </div>
 
