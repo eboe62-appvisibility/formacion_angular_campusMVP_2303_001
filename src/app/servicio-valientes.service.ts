@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class ServicioValientesService {
 
   constructor() { }
+
+  mostrarMensaje(mensaje:string){
+    alert(mensaje);
+  }
+
 }
