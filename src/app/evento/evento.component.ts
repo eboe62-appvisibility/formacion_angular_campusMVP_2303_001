@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioValientesService } from '../servicio-valientes.service';
 import { Valiente } from '../valiente.model';
 
 @Component({
@@ -28,6 +29,7 @@ export class EventoComponent implements OnInit {
 
   agregarValiente(){
     let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
+    this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
     this.valientes.push(valiente);
   }
 
@@ -62,7 +64,7 @@ export class EventoComponent implements OnInit {
     return this.nparticipantes_eve;
   }
 
-  constructor() { }
+  constructor(private miServicio:ServicioValientesService) { }
 
   ngOnInit(): void {
   }

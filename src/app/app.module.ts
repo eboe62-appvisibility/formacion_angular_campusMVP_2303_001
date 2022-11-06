@@ -8,6 +8,7 @@ import { ValienteComponent } from './valiente/valiente.component';
 import { FormsModule } from '@angular/forms';
 import { InscritosComponent } from './evento/inscritos/inscritos.component';
 import { CocheComponent } from './evento/coche/coche.component';
+import { ServicioValientesService } from './servicio-valientes.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { CocheComponent } from './evento/coche/coche.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ServicioValientesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
