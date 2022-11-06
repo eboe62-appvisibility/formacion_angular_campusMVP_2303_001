@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { InscritosComponent } from './evento/inscritos/inscritos.component';
 import { CocheComponent } from './evento/coche/coche.component';
 import { ServicioValientesService } from './servicio-valientes.service';
+import { InscritosService } from './evento/inscritos.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ServicioValientesService } from './servicio-valientes.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [ServicioValientesService],
+  providers: [ServicioValientesService, InscritosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
