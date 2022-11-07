@@ -63,7 +63,6 @@ export class EventoComponent implements OnInit {
   getNparticipantes_eve(){
     return this.nparticipantes_eve;
   }
-
   constructor(private miServicio:ServicioValientesService) { }
 
   ngOnInit(): void {
