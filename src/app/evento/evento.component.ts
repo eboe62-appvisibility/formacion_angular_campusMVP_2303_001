@@ -22,6 +22,10 @@ export class EventoComponent implements OnInit {
   titulo2 = 'INSCRIPCION';
 
   constructor(private miServicio:ServicioValientesService, private inscritosService:InscritosService) {
+    //this.valientes = this.inscritosService.valientes;
+  }
+
+  ngOnInit(): void {
     this.valientes = this.inscritosService.valientes;
   }
 
@@ -63,9 +67,6 @@ export class EventoComponent implements OnInit {
 
   getNparticipantes_eve(){
     return this.nparticipantes_eve;
-  }
-
-  ngOnInit(): void {
   }
 
 }
