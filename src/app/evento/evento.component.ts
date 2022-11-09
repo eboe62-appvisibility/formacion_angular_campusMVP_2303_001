@@ -33,7 +33,7 @@ export class EventoComponent implements OnInit {
 
   agregarValiente(){
     let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
-    this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
+    //this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
     this.inscritosService.agregarInscritoServicio(valiente);
     //this.valientes.push(valiente);
   }
