@@ -10,14 +10,14 @@ export class CocheComponent implements OnInit {
 
   @Output() plazaslibres_eveprs = new EventEmitter<string>();
 
-  constructor(private miServicio:ServicioValientesService) { }
+  //constructor(private miServicio:ServicioValientesService) { }
 
   ngOnInit(): void {
   }
 
 actualizarPlazaslibres(value: string){
-  this.miServicio.mostrarMensaje(value);
-  this.plazaslibres_eveprs.emit(value);
+  //this.miServicio.mostrarMensaje(value);
+  //this.plazaslibres_eveprs.emit(value);
 }
 
 }
