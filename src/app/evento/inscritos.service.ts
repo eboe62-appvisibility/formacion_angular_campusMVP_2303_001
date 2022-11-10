@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { ServicioValientesService } from "../servicio-valientes.service";
 import { Valiente } from "../valiente.model";
-
 @Injectable()
+
 export class InscritosService {
 
   constructor(private servicioVentanaEmergente: ServicioValientesService){
