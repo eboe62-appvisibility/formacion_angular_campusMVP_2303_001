@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioValientesService } from '../servicio-valientes.service';
 import { Valiente } from '../valiente.model';
+import { InscritosService } from './inscritos.service';
 
 @Component({
   selector: 'app-evento',
@@ -20,17 +21,21 @@ export class EventoComponent implements OnInit {
   apodo_prs="...";
   titulo2 = 'INSCRIPCION';
 
-  valientes:Valiente[]=[
-    new Valiente("Mamel","Jose Manuel",9,"mame@gmail.com"),
-    new Valiente("Raúl","Raúl",8,"raul@gmail.com"),
-    new Valiente("apodo01","valNombre01",4,"apodo01@gmail.com"),
-    new Valiente("apodo02","valNombre02",6,"apodo02@gmail.com"),
-  ];
+  constructor(private miServicio:ServicioValientesService, private inscritosService:InscritosService) {
+    //this.valientes = this.inscritosService.valientes;
+  }
+
+  ngOnInit(): void {
+    this.valientes = this.inscritosService.valientes;
+  }
+
+  valientes:Valiente[]=[];
 
   agregarValiente(){
     let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
-    this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
-    this.valientes.push(valiente);
+    //this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
+    this.inscritosService.agregarInscritoServicio(valiente);
+    //this.valientes.push(valiente);
   }
 
   cuadroApodo:string="";
@@ -63,9 +68,6 @@ export class EventoComponent implements OnInit {
   getNparticipantes_eve(){
     return this.nparticipantes_eve;
   }
-  constructor(private miServicio:ServicioValientesService) { }
-
-  ngOnInit(): void {
-  }
 
 }
+
