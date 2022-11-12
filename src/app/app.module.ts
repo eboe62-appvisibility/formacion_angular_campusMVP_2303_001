@@ -10,14 +10,24 @@ import { InscritosComponent } from './evento/inscritos/inscritos.component';
 import { CocheComponent } from './evento/coche/coche.component';
 import { ServicioValientesService } from './servicio-valientes.service';
 import { InscritosService } from './evento/inscritos.service';
+import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes=[
+  {path:'', component:HomeComponent},
+  {path:'inscritos', component:InscritosComponent},
+  {path:'evento', component:EventoComponent},
+  {path:'eventos', component:EventosComponent}
+]
 
 @NgModule({
   declarations: [
-    AppComponent, EventosComponent, EventoComponent, ValienteComponent, InscritosComponent, CocheComponent
+    AppComponent, EventosComponent, EventoComponent, ValienteComponent, InscritosComponent, CocheComponent, HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ServicioValientesService, InscritosService],
   bootstrap: [AppComponent]
