@@ -1,11 +1,14 @@
-<!--
-<section *ngFor="let twimp of twimps" class="evento_list">
--->
-<section class="section-header">
-    <!--
-  <tweempus-twimp-card [twimp]="twimp"></tweempus-twimp-card>
--->
-  <h1>EVENTOS</h1>
+<section class="evento">
+	<div class="evento_content">
+    <br/>
+    <span>Saludo: {{saludo}}</span>
+    <br/><br/>
+      <ul>
+          <li *ngFor="let entrada of titulos_eve; let i=index" style="list-style-type: none"><span style="font-size: larger; font-weight: bold;">#{{i+1}}: {{entrada.titulo_eve}}</span>.</li>
+      </ul>
+
+      <br><br>
+      <hr class="evento_line">
+    </div>
 </section>
-<app-evento></app-evento>
 
