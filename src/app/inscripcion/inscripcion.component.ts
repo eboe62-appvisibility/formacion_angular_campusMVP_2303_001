@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Valiente } from '../valiente.model';
 import { InscritosService } from '../evento/inscritos.service';
 import { ServicioValientesService } from '../servicio-valientes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscripcion',
@@ -11,7 +12,7 @@ import { ServicioValientesService } from '../servicio-valientes.service';
 export class InscripcionComponent implements OnInit {
   titulo2 = 'INSCRIPCION';
 
-  constructor(private miServicio:ServicioValientesService, private inscritosService:InscritosService) { }
+  constructor(private router: Router, private miServicio:ServicioValientesService, private inscritosService:InscritosService) { }
 
   ngOnInit(): void {
     this.valientes = this.inscritosService.valientes;
@@ -48,6 +49,10 @@ export class InscripcionComponent implements OnInit {
     }else{
       this.textoRegistro="No hay nadie registrado"
     }
+  }
+
+  volverHome() {
+    this.router.navigate(['']);
   }
 
 }
