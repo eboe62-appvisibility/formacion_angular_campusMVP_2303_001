@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col">
       <div>
+        <a [routerLink]="['/inscripcion',indice]">
         #{{[indice+1]}} {{valienteDeLista.apodo_prs}} {{valienteDeLista.nombre_prs}} {{valienteDeLista.preferencia_prs}} {{valienteDeLista.email_prs}}
+        </a>
       </div>
       <app-coche (plazaslibres_eveprs)="agregarPlazaslibres($event)"></app-coche>
       <ul style="list-style: none;">
