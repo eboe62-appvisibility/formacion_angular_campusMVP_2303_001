@@ -19,12 +19,21 @@ const appRoutes: Routes=[
   {path:'', component:HomeComponent},
   {path:'evento', component:EventoComponent},
   {path:'inscripcion', component:InscripcionComponent},
-  {path:'registro', component:RegistroComponent}
+  {path:'registro', component:RegistroComponent},
+  {path:'inscripcion/:id', component:InscripcionComponent}
 ]
 
 @NgModule({
   declarations: [
-    AppComponent, EventosComponent, EventoComponent, ValienteComponent, InscritosComponent, CocheComponent, HomeComponent, InscripcionComponent, RegistroComponent
+    AppComponent, 
+    EventosComponent, 
+    EventoComponent, 
+    ValienteComponent, 
+    InscritosComponent, 
+    CocheComponent, 
+    HomeComponent, 
+    InscripcionComponent, 
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
