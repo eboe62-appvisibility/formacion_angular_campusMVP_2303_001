@@ -21,4 +21,18 @@ export class InscritosService {
     valiente.apodo_prs + "\n" + "eMail: " + valiente.email_prs)
     this.valientes.push(valiente);
   }
+
+  encontrarInscrito (indice:number){
+    let valiente:Valiente = this.valientes[indice];
+    return valiente;
+  }
+
+  actualizarInscrito (indice:number, valiente:Valiente){
+    let valienteModificado = this.valientes[indice];
+    valienteModificado.apodo_prs = valiente.apodo_prs;
+    valienteModificado.nombre_prs = valiente.nombre_prs;
+    valienteModificado.preferencia_prs = valiente.preferencia_prs;
+    valienteModificado.email_prs = valiente.email_prs;
+  }
+
 }

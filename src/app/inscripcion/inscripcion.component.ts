@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Valiente } from '../valiente.model';
 import { InscritosService } from '../evento/inscritos.service';
 import { ServicioValientesService } from '../servicio-valientes.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscripcion',
@@ -12,19 +12,33 @@ import { Router } from '@angular/router';
 export class InscripcionComponent implements OnInit {
   titulo2 = 'INSCRIPCION';
 
-  constructor(private router: Router, private miServicio:ServicioValientesService, private inscritosService:InscritosService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private miServicio:ServicioValientesService, private inscritosService:InscritosService) { }
 
   ngOnInit(): void {
     this.valientes = this.inscritosService.valientes;
+    this.indice = this.route.snapshot.params['id'];
+    let valiente:Valiente = this.inscritosService.encontrarInscrito(this.indice);
+    this.cuadroApodo = valiente.apodo_prs;
+    this.cuadroNombre = valiente.nombre_prs;
+    this.cuadroPreferencia = valiente.preferencia_prs;
+    this.cuadroEmail = valiente.email_prs;
   }
 
   valientes:Valiente[]=[];
+  indice:number;
 
   agregarValiente(){
     let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
     //this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
     this.inscritosService.agregarInscritoServicio(valiente);
     //this.valientes.push(valiente);
+  }
+
+  actualizarValiente() {
+    let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
+    //this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
+    this.inscritosService.actualizarInscrito(this.indice, valiente);
+    this.router.navigate(['evento']);
   }
 
   cuadroApodo:string="";
