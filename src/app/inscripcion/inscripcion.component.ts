@@ -41,6 +41,11 @@ export class InscripcionComponent implements OnInit {
     this.router.navigate(['evento']);
   }
 
+  bajaValiente() {
+    this.inscritosService.eliminarInscrito(this.indice);
+    this.router.navigate(['evento']);
+  }
+
   cuadroApodo:string="";
   cuadroNombre:string="";
   cuadroPreferencia:number=0;
