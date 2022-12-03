@@ -35,4 +35,8 @@ export class InscritosService {
     valienteModificado.email_prs = valiente.email_prs;
   }
 
+  eliminarInscrito (indice:number) {
+    this.valientes.splice(indice, 1);
+  }
+
 }
