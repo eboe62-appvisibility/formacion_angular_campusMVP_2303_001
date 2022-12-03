@@ -14,26 +14,28 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
   {path:'evento', component:EventoComponent},
   {path:'inscripcion', component:InscripcionComponent},
   {path:'registro', component:RegistroComponent},
-  {path:'inscripcion/:id', component:InscripcionComponent}
+  {path:'inscripcion/:id', component:InscripcionComponent},
+  {path:'**', component:ErrorPersonalizadoComponent}
 ]
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    EventosComponent, 
-    EventoComponent, 
-    ValienteComponent, 
-    InscritosComponent, 
-    CocheComponent, 
-    HomeComponent, 
-    InscripcionComponent, 
-    RegistroComponent
+    AppComponent,
+    EventosComponent,
+    EventoComponent,
+    ValienteComponent,
+    InscritosComponent,
+    CocheComponent,
+    HomeComponent,
+    InscripcionComponent,
+    RegistroComponent, ErrorPersonalizadoComponent
   ],
   imports: [
     BrowserModule,
