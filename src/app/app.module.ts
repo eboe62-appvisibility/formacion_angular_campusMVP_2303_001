@@ -15,6 +15,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
+import { DataServices } from "./data.services";
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
@@ -40,9 +42,10 @@ const appRoutes: Routes=[
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
-  providers: [ServicioValientesService, InscritosService],
+  providers: [ServicioValientesService, InscritosService, DataServices],
   bootstrap: [AppComponent]
 })
 
