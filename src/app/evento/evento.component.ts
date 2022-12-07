@@ -25,7 +25,10 @@ export class EventoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.valientes = this.inscritosService.valientes;
+//    this.valientes = this.inscritosService.valientes;
+      this.inscritosService.obtenerValientes().subscribe(
+        misInscritos => {console.log(misInscritos);
+    });
   }
 
   valientes:Valiente[]=[];

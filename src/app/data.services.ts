@@ -9,8 +9,12 @@ export class DataServices{
 
     constructor (private httpClient:HttpClient){}
 
+    cargarValientes() {
+      return this.httpClient.get('https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos.json');
+    }
+
     guardarValientes(valientes:Valiente[]){
-        this.httpClient.put('https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos.json', valientes).subscribe(
+        this.httpClient.post('https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos.json', valientes).subscribe(
             response=>console.log("Se han guardado los valientes: " + response),
             error=>console.log("Error: " + error),
         );
