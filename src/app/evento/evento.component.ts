@@ -28,6 +28,8 @@ export class EventoComponent implements OnInit {
 //    this.valientes = this.inscritosService.valientes;
       this.inscritosService.obtenerValientes().subscribe(
         misInscritos => {console.log(misInscritos);
+      this.valientes = Object.values(misInscritos);
+      this.inscritosService.setValientes(this.valientes);
     });
   }
 
