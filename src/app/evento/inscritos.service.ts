@@ -45,6 +45,7 @@ export class InscritosService {
     valienteModificado.nombre_prs = valiente.nombre_prs;
     valienteModificado.preferencia_prs = valiente.preferencia_prs;
     valienteModificado.email_prs = valiente.email_prs;
+    this.dataService.actualizarValiente(indice, valiente);
   }
 
   eliminarInscrito (indice:number) {
