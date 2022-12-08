@@ -8,6 +8,10 @@ export class InscritosService {
 
   constructor(private servicioVentanaEmergente: ServicioValientesService, private dataService:DataServices){}
 
+  setValientes(misInscritos:Valiente[]){
+    this.valientes = misInscritos;
+  };
+
   obtenerValientes(){
     return this.dataService.cargarValientes();
   }

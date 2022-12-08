@@ -14,7 +14,7 @@ export class DataServices{
     }
 
     guardarValientes(valientes:Valiente[]){
-        this.httpClient.post('https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos.json', valientes).subscribe(
+        this.httpClient.put('https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos.json', valientes).subscribe(
             response=>console.log("Se han guardado los valientes: " + response),
             error=>console.log("Error: " + error),
         );
