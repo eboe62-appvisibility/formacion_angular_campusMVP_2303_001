@@ -5,6 +5,9 @@ import { Valiente } from "../valiente.model";
 @Injectable()
 
 export class InscritosService {
+  actualizarValiente(indice: number, valiente: Valiente) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private servicioVentanaEmergente: ServicioValientesService, private dataService:DataServices){}
 
@@ -50,6 +53,8 @@ export class InscritosService {
 
   eliminarInscrito (indice:number) {
     this.valientes.splice(indice, 1);
+    this.dataService.eliminarValiente(indice);
+    if (this.valientes!=null) this.dataService.guardarValientes(this.valientes);
   }
 
 }

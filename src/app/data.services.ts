@@ -1,21 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Valiente } from './valiente.model';
+import { Observable, Subject } from "rxjs";
 
 @Injectable()
 
 export class DataServices{
+    url: string = 'https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos';
 
     constructor (private httpClient:HttpClient){}
 
-    // READ
+      // READ
     cargarValientes() {
-        return this.httpClient.get('https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos.json');
+        return this.httpClient.get(this.url + '.json');
     }
 
     // CREATE
     guardarValientes(valientes:Valiente[]){
-        this.httpClient.put('https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos.json', valientes).subscribe(
+        this.httpClient.put(this.url + '.json', valientes).subscribe(
             response=>console.log("Se han guardado los valientes: " + response),
             error=>console.log("Error: " + error),
         );
@@ -23,10 +25,20 @@ export class DataServices{
 
     // UPDATE
     actualizarValiente(indice:number, valiente:Valiente){
-        let url = 'https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos/' + indice + '.json';
+        let url = this.url + '/' + indice + '.json';
         this.httpClient.put(url, valiente).subscribe(
             response=>console.log("Se ha modificado el valiente: " + response),
             error=>console.log("Error: " + error),
         );
     }
+
+    // DELETE
+    eliminarValiente(indice:number){
+        let url = this.url + '/' + indice + '.json';
+        this.httpClient.delete(url).subscribe(
+            response=>console.log("Se ha dado de baja el valiente: " + response),
+            error=>console.log("Error: " + error),
+        );
+    }
+
 }
