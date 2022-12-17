@@ -50,14 +50,16 @@ export class InscripcionComponent implements OnInit {
 */
 actualizarValiente() {
   if (this.accion == 1) {
-  let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
-  //this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
-  this.inscritosService.actualizarInscrito(this.indice, valiente);
-  this.router.navigate(['evento']);
+    let valiente = new Valiente(this.cuadroApodo, this.cuadroNombre, this.cuadroPreferencia, this.cuadroEmail);
+    //this.miServicio.mostrarMensaje("Apodo del inscrito: " + valiente.apodo_prs)
+    this.inscritosService.actualizarInscrito(this.indice, valiente);
   } else {
     this.inscritosService.eliminarInscrito(this.indice);
-    this.router.navigate(['evento']);
   }
+  this.router.navigate(['evento'])
+  .then(() => {
+    window.location.reload();
+  });
 }
 
 cuadroApodo:string="";
