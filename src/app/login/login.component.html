@@ -5,7 +5,7 @@
 <section class="valiente">
     <div class="container">
         <div class="col">
-            <form>
+            <form class="form-group" #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
                 <div class="form-group col-md-3">
                     <input type="email" name="email" placeholder="eMail" class="form-control" [(ngModel)]="email_prs">
                 </div>

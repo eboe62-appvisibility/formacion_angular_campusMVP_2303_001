@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   email_prs: string = "";
   contrasenna_prs: string = "";
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   registrarUsuario() {
     this.registrado = true

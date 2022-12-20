@@ -22,7 +22,7 @@ export class LoginService {
         )
       }
     );
-  }SS
+  }
 
   getIdToken() {
     return this.token;
