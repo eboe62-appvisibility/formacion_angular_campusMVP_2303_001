@@ -17,17 +17,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
 
-  registrarUsuario() {
-    this.registrado = true
-    this.mensaje = " registrado con éxito"
-  }
-
   ngOnInit(): void {
   }
 
-  login(form:NgForm){
-    const email = form.value.email
-    const password = form.value.password
+  login(miFormulario:NgForm){
+    this.registrado = true
+    this.mensaje = " registrado con éxito"
+    this.email_prs = miFormulario.value.email_prs
+    this.contrasenna_prs = miFormulario.value.contrasenna_prs
+    this.loginService.login(this.email_prs, this.contrasenna_prs)
   }
 
 }

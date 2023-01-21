@@ -17,7 +17,9 @@ export class LoginService {
         firebase.auth().currentUser?.getIdToken().then(
           token => {
             this.token = token;
-            this.router.navigate(['/']);
+            console.log("El token es: ");
+            console.log(this.token);
+            this.router.navigate(['/evento']);
           }
         )
       }
@@ -29,7 +31,6 @@ export class LoginService {
   }
 
   estaLogueado() {
-    console.log(this.token);
     return this.token;
   }
 

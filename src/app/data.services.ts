@@ -15,7 +15,7 @@ export class DataServices{
       // READ
     cargarValientes() {
         const token=this.loginService.getIdToken();
-        return this.httpClient.get(this.url + '.json' + token);
+        return this.httpClient.get(this.url + '.json?auth=' + token);
     }
 
     // CREATE
