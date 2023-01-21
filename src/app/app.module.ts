@@ -13,17 +13,17 @@ import { InscritosService } from './evento/inscritos.service';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
-import { RegistroComponent } from './registro/registro.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { DataServices } from "./data.services";
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+import { CookieService } from 'ngx-cookie-service'
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
   {path:'evento', component:EventoComponent},
   {path:'inscripcion', component:InscripcionComponent},
-  {path:'registro', component:RegistroComponent},
   {path:'inscripcion/:id', component:InscripcionComponent},
   {path: 'login', component:LoginComponent},
   {path:'**', component:ErrorPersonalizadoComponent}
@@ -39,7 +39,6 @@ const appRoutes: Routes=[
     CocheComponent,
     HomeComponent,
     InscripcionComponent,
-    RegistroComponent,
     ErrorPersonalizadoComponent,
     LoginComponent
   ],
@@ -49,7 +48,7 @@ const appRoutes: Routes=[
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [ServicioValientesService, InscritosService, DataServices],
+  providers: [ServicioValientesService, InscritosService, DataServices, LoginService, CookieService],
   bootstrap: [AppComponent]
 })
 

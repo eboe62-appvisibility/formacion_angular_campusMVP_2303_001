@@ -3,17 +3,19 @@ import { Injectable } from '@angular/core';
 import { Valiente } from './valiente.model';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs';
+import { LoginService } from './login/login.service';
 
 @Injectable()
 
 export class DataServices{
     url: string = 'https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos';
 
-    constructor (private httpClient:HttpClient){}
+    constructor (private httpClient:HttpClient, private loginService:LoginService){}
 
       // READ
     cargarValientes() {
-        return this.httpClient.get(this.url + '.json');
+        const token=this.loginService.getIdToken();
+        return this.httpClient.get(this.url + '.json?auth=' + token);
     }
 
     // CREATE

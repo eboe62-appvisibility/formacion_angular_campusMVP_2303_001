@@ -42,10 +42,10 @@ export class EventoComponent implements OnInit {
     //this.valientes.push(valiente);
   }
 
-  cuadroApodo:string="";
-  cuadroNombre:string="";
-  cuadroPreferencia:number=0;
-  cuadroEmail:string="";
+  cuadroApodo: string = "";
+  cuadroNombre: string = "";
+  cuadroPreferencia: number = 0;
+  cuadroEmail: string = "";
 
   llamaApodo_prs(value:string){
   }

@@ -1,14 +1,35 @@
-<div class="container">
-    <div class="col">
-    <form>
-        <div class="form-group col-md-3">
-            <input type="email" name="email" placeholder="eMail" class="form-control">
+<section class="section-header">
+    <h1 style="text-align: center;">{{titulo1}}</h1>
+</section>
+<br/><br/>
+<section class="valiente">
+    <div class="container">
+        <div class="col">
+            <form class="form-group" #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
+              <div class="form-group col-md-3">
+                  <input type="email" name="email_prs" placeholder="eMail" class="form-control" ngModel="email">
+              </div>
+              <br/>
+              <div class="form-group col-md-3">
+                  <input type="password" name="contrasenna_prs" placeholder="contraseña" class="form-control" ngModel="contrasenna">
+              </div>
+              <br/>
+              <button type="submit"class="btn btn-primary">Adelante</button>
+            </form>
+
+            <br/>
+            <br/>
+            <!--
+            <p *ngIf="registrado; else sinRegistrar">{{email_prs}}<span [ngStyle]="{color: mensaje==' se ha registrado con éxito' ? 'blue' : 'black'}">{{mensaje}}</span></p>
+            -->
+            <p *ngIf="registrado; else sinRegistrar">{{email_prs}}<span [ngClass]="{paraRegistrados: mensaje==' se ha registrado con éxito' ? 'blue' : 'black'}">{{mensaje}}</span></p>
+
+            <ng-template #sinRegistrar>
+            <p>No hay nadie registrado</p>
+            </ng-template>
+
+            <br><br>
+            <hr class="valiente_line">
         </div>
-        <br/>
-        <div class="form-group col-md-3">
-            <input type="password" name="password" placeholder="contraseña" class="form-control">
-        </div>
-        <br/>
-    </form>
-    <button type="submit"class="btn btn-primary">Adelante</button>
-</div>
+    </div>
+</section>
