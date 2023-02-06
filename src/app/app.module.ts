@@ -19,11 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { CookieService } from 'ngx-cookie-service'
+import { LoginGuardian } from './login/login-guardian';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
-  {path:'evento', component:EventoComponent},
-  {path:'inscripcion', component:InscripcionComponent},
+  {path:'evento', component:EventoComponent, canActivate:[LoginGuardian]},
+  {path:'inscripcion', component:InscripcionComponent, canActivate:[LoginGuardian]},
   {path:'inscripcion/:id', component:InscripcionComponent},
   {path: 'login', component:LoginComponent},
   {path:'**', component:ErrorPersonalizadoComponent}
@@ -40,7 +41,7 @@ const appRoutes: Routes=[
     HomeComponent,
     InscripcionComponent,
     ErrorPersonalizadoComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,7 @@ const appRoutes: Routes=[
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [ServicioValientesService, InscritosService, DataServices, LoginService, CookieService],
+  providers: [ServicioValientesService, InscritosService, DataServices, LoginService, CookieService, LoginGuardian],
   bootstrap: [AppComponent]
 })
 
