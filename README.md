@@ -1,3 +1,6 @@
+Usuario: eboe62@hotmail.com ó eboe62@gmail.com
+Contraseña: 12345678
+
 # FormacionAngularPildoras2209001
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.

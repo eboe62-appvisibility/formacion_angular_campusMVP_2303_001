@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { DataServices } from "../data.services";
+import { ServicioAutenticacion } from "../servicios/servicio-autenticacion";
 import { ServicioValientesService } from "../servicio-valientes.service";
 import { Valiente } from "../valiente.model";
 @Injectable()
@@ -9,14 +9,14 @@ export class InscritosService {
     throw new Error('Method not implemented.');
   }
 
-  constructor(private servicioVentanaEmergente: ServicioValientesService, private dataService:DataServices){}
+  constructor(private servicioVentanaEmergente: ServicioValientesService, private ServicioAutenticacion:ServicioAutenticacion){}
 
   setValientes(misInscritos:Valiente[]){
     this.valientes = misInscritos;
   };
 
   obtenerValientes(){
-    return this.dataService.cargarValientes();
+    return this.ServicioAutenticacion.cargarValientes();
   }
 
   valientes:Valiente[]=[];
@@ -34,7 +34,7 @@ export class InscritosService {
     this.servicioVentanaEmergente.mostrarMensaje("Persona que se va a inscribir: " + "\n" +
     valiente.apodo_prs + "\n" + "eMail: " + valiente.email_prs)
     this.valientes.push(valiente);
-    this.dataService.guardarValientes(this.valientes);
+    this.ServicioAutenticacion.guardarValientes(this.valientes);
   }
 
   encontrarInscrito (indice:number){
@@ -48,13 +48,13 @@ export class InscritosService {
     valienteModificado.nombre_prs = valiente.nombre_prs;
     valienteModificado.preferencia_prs = valiente.preferencia_prs;
     valienteModificado.email_prs = valiente.email_prs;
-    this.dataService.actualizarValiente(indice, valiente);
+    this.ServicioAutenticacion.actualizarValiente(indice, valiente);
   }
 
   eliminarInscrito (indice:number) {
     this.valientes.splice(indice, 1);
-    this.dataService.eliminarValiente(indice);
-    if (this.valientes!=null) this.dataService.guardarValientes(this.valientes);
+    this.ServicioAutenticacion.eliminarValiente(indice);
+    if (this.valientes!=null) this.ServicioAutenticacion.guardarValientes(this.valientes);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Valiente } from '../../valiente/valiente.model';
+import { Valiente } from '../../modelo/entidades/valiente.model';
 
 @Component({
   selector: 'app-inscritos',

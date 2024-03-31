@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-inscripcion',
   templateUrl: './inscripcion.component.html',
-  styleUrls: ['../valiente/valiente.component.css']
+  styleUrls: ['../modelo/entidades/valiente.component.css']
 })
 export class InscripcionComponent implements OnInit {
   titulo2 = 'INSCRIPCION';

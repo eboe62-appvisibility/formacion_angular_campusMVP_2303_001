@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { CabeceraComponent } from './componentes/maquetacion/cabecera/cabecera.component';
+import { MenuComponent } from './componentes/tienda/menu/menu.component';
+import { MaquetacionTiendaComponent } from './componentes/maquetacion/maquetacion-tienda/maquetacion-tienda.component';
+import { PieComponent } from './componentes/maquetacion/pie/pie.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { EventoComponent } from './evento/evento.component';
-import { ValienteComponent } from './valiente/valiente.component';
+import { ValienteComponent } from './modelo/entidades/valiente.component';
 import { FormsModule } from '@angular/forms';
 import { InscritosComponent } from './evento/inscritos/inscritos.component';
 import { CocheComponent } from './evento/coche/coche.component';
@@ -13,13 +17,13 @@ import { InscritosService } from './evento/inscritos.service';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
-import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
-import { DataServices } from "./data.services";
+import { ErrorPersonalizadoComponent } from './util/error-personalizado/error-personalizado.component';
+import { ServicioAutenticacion } from './servicios/servicio-autenticacion';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
-import { LoginService } from './login/login.service';
+import { LoginComponent } from './componentes/usuarios/login/login.component';
+import { LoginService } from './componentes/usuarios/login/login.service';
 import { CookieService } from 'ngx-cookie-service'
-import { LoginGuardian } from './login/login-guardian';
+import { LoginGuardian } from './componentes/usuarios/login/login-guardian';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
@@ -33,6 +37,10 @@ const appRoutes: Routes=[
 @NgModule({
   declarations: [
     AppComponent,
+    CabeceraComponent,
+    MenuComponent,
+    MaquetacionTiendaComponent,
+    PieComponent,
     EventosComponent,
     EventoComponent,
     ValienteComponent,
@@ -49,7 +57,7 @@ const appRoutes: Routes=[
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [ServicioValientesService, InscritosService, DataServices, LoginService, CookieService, LoginGuardian],
+  providers: [ServicioValientesService, InscritosService, ServicioAutenticacion, LoginService, CookieService, LoginGuardian],
   bootstrap: [AppComponent]
 })
 

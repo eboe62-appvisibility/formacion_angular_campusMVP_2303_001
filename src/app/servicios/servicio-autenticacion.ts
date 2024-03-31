@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Valiente } from './valiente.model';
+import { Valiente } from '../valiente.model';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs';
-import { LoginService } from './login/login.service';
+import { LoginService } from '../componentes/usuarios/login/login.service';
 
 @Injectable()
 
-export class DataServices{
+export class ServicioAutenticacion{
     url: string = 'https://apptravel01-d12e0-default-rtdb.europe-west1.firebasedatabase.app/datos';
     token: string;
 
