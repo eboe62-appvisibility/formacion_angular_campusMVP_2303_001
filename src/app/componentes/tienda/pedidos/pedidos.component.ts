@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Valiente } from '../valiente.model';
-import { InscritosService } from './inscritos.service';
-import { ServicioValientesService } from '../servicio-valientes.service';
+import { Valiente } from '../../../valiente.model';
+import { InscritosService } from '../../../evento/inscritos.service';
+import { ServicioValientesService } from '../../../servicio-valientes.service';
 
 @Component({
-  selector: 'app-evento',
-  //templateUrl: './evento.component.html',
+  selector: 'app-pedidos',
+  //templateUrl: './catalogo.component.html',
   //template:"<p>Aquí iria un evento</p>",
-  templateUrl: './evento.component.html',
-  //styleUrls: ['./evento.component.css']
+  templateUrl: './pedidos.component.html',
+  //styleUrls: ['./catalogo.component.css']
   //styles:["p{background-color:red;}"]
-  styleUrls: ['./evento.component.css']
+  styleUrls: ['./pedidos.component.css']
 })
-export class EventoComponent implements OnInit {
+export class PedidosComponent implements OnInit {
   titulo_eve="Fin de Año montañero. Pirineo Aragonés.";
   fechaidatru_eve="2021-12-28";
   nivel_eve="Medio-alto";
   private nparticipantes_eve=10;
   apodo_prs="...";
-  titulo2 = 'INSCRIPCION';
+  titulo2 = 'PEDIDOS';
 
   constructor(private miServicio:ServicioValientesService, private inscritosService:InscritosService) {
     //this.valientes = this.inscritosService.valientes;

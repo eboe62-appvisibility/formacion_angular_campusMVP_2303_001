@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Valiente } from '../valiente.model';
-import { InscritosService } from '../evento/inscritos.service';
-import { ServicioValientesService } from '../servicio-valientes.service';
+import { Valiente } from '../../../valiente.model';
+import { InscritosService } from '../../../evento/inscritos.service';
+import { ServicioValientesService } from '../../../servicio-valientes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-inscripcion',
-  templateUrl: './inscripcion.component.html',
-  styleUrls: ['../modelo/entidades/valiente.component.css']
+  selector: 'app-cesta',
+  templateUrl: './cesta.component.html',
+  styleUrls: ['../../../modelo/entidades/valiente.component.css']
 })
-export class InscripcionComponent implements OnInit {
+export class CestaComponent implements OnInit {
   titulo2 = 'INSCRIPCION';
 
   constructor(private router: Router, private route: ActivatedRoute, private miServicio:ServicioValientesService, private inscritosService:InscritosService) { }

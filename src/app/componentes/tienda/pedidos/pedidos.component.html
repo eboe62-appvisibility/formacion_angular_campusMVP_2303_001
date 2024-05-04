@@ -1,0 +1,39 @@
+<section class="section-header">
+  <h1 style="text-align: center;">EVENTO</h1>
+</section>
+<br/><br/>
+<section class="evento">
+<!--
+	<div class="evento_header">
+		<img class="evento_header_img" [src]="evento.author.image" alt="Imagen de un evento">
+		<a class="evento_header_name" [href]="evento.author.url" target="_b">by {{evento.author.fullName}}</a>
+		<div class="evento_header_date">Published on {{evento.timestamp}}</div>
+	</div>
+-->
+	<div class="evento_content">
+<!--
+		{{evento.content}}
+-->
+    <p>Título: {{titulo_eve}}</p>
+    <p>Fecha: {{fechaidatru_eve}}</p>
+    <p>Nivel: {{nivel_eve}}</p>
+    <p>Nº Participantes: {{getNparticipantes_eve()<=10? "Aforo limitado por Covid (10)":getNparticipantes_eve()}}</p>
+	</div>
+
+  <section class="section-header">
+    <h1 style="text-align: center;">{{titulo2}}</h1>
+  </section>
+
+  <br><br>
+
+  <app-inscritos *ngFor="let valiente of valientes; let i=index" [valienteDeLista]="valiente" [indice]="i"></app-inscritos>
+
+  <hr class="evento_line">
+<!--
+	<div class="evento_fav">
+    <a class="fav_icon" [ngClass]="{'fav_icon-selected': evento.favorite}" href="#">&#10084;</a>
+	</div>
+-->
+</section>
+
+<br><br>

@@ -6,8 +6,8 @@ import { CabeceraComponent } from './componentes/maquetacion/cabecera/cabecera.c
 import { MenuComponent } from './componentes/tienda/menu/menu.component';
 import { MaquetacionTiendaComponent } from './componentes/maquetacion/maquetacion-tienda/maquetacion-tienda.component';
 import { PieComponent } from './componentes/maquetacion/pie/pie.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { EventoComponent } from './evento/evento.component';
+import { PerfilComponent } from './componentes/usuarios/perfil/perfil.component';
+import { CatalogoComponent } from './componentes/tienda/catalogo/catalogo.component';
 import { ValienteComponent } from './modelo/entidades/valiente.component';
 import { FormsModule } from '@angular/forms';
 import { InscritosComponent } from './evento/inscritos/inscritos.component';
@@ -16,7 +16,8 @@ import { ServicioValientesService } from './servicio-valientes.service';
 import { InscritosService } from './evento/inscritos.service';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { InscripcionComponent } from './inscripcion/inscripcion.component';
+import { CestaComponent } from './componentes/tienda/cesta/cesta.component';
+import { PedidosComponent } from './componentes/tienda/pedidos/pedidos.component';
 import { ErrorPersonalizadoComponent } from './util/error-personalizado/error-personalizado.component';
 import { ServicioAutenticacion } from './servicios/servicio-autenticacion';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,9 +28,11 @@ import { LoginGuardian } from './componentes/usuarios/login/login-guardian';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
-  {path:'evento', component:EventoComponent, canActivate:[LoginGuardian]},
-  {path:'inscripcion', component:InscripcionComponent, canActivate:[LoginGuardian]},
-  {path:'inscripcion/:id', component:InscripcionComponent},
+  {path:'perfil', component:PerfilComponent, canActivate:[LoginGuardian]},
+  {path:'catalogo', component:CatalogoComponent, canActivate:[LoginGuardian]},
+  {path:'cesta', component:CestaComponent, canActivate:[LoginGuardian]},
+  {path:'pedidos', component:PedidosComponent, canActivate:[LoginGuardian]},
+  {path:'inscripcion/:id', component:CestaComponent},
   {path: 'login', component:LoginComponent},
   {path:'**', component:ErrorPersonalizadoComponent}
 ]
@@ -41,13 +44,15 @@ const appRoutes: Routes=[
     MenuComponent,
     MaquetacionTiendaComponent,
     PieComponent,
-    EventosComponent,
-    EventoComponent,
+    CatalogoComponent,
+    CestaComponent,
+    PedidosComponent,
+    PerfilComponent,
     ValienteComponent,
     InscritosComponent,
     CocheComponent,
     HomeComponent,
-    InscripcionComponent,
+    CestaComponent,
     ErrorPersonalizadoComponent,
     LoginComponent,
   ],

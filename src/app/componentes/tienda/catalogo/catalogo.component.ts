@@ -2,12 +2,12 @@ import { Component } from "@angular/core"
 import { IEvent } from 'src/interface/iEvent';
 
 @Component({
-    selector: "app-eventos",
-    templateUrl: "./eventos.component.html",
-    styleUrls: ['./eventos.component.css']
+    selector: "app-catalogo",
+    templateUrl: "./catalogo.component.html",
+    styleUrls: ['./catalogo.component.css']
 })
 
-export class EventosComponent{
+export class CatalogoComponent{
   saludo = "Lista de Eventos disponibles"
   titulos_eve: IEvent[];
 

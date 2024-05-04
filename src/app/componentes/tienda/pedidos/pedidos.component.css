@@ -1,9 +1,3 @@
-.paraRegistrados{
-  color: blue;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
 .login_button {
   width: 80%;
   height: 50px;
@@ -107,6 +101,49 @@
 
 @media (min-width: 768px) {
   .evento {
+      margin: 0 auto 1em auto;
+  }
+}
+
+.section-header {
+  width: 100%;
+  background: white;
+  text-align: center;
+}
+
+.valiente {
+  background-color: #fff;
+  color: #666;
+  position: relative;
+  border-radius: 15px;
+  margin: 0 1em 1em 1em;
+  box-sizing: border-box;
+  max-width: 768px;
+}
+
+.valiente_content {
+  width: 90%;
+  margin: 0 auto 2em;
+}
+
+.valiente_line {
+  width: 90%;
+  margin: 0 auto;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+  margin-top: 0.5em;
+}
+
+/* RESPONSIVE
+ ========================================================================= */
+
+
+/* Moviles en horizontal o tablets en vertical
+ ------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .valiente {
       margin: 0 auto 1em auto;
   }
 }

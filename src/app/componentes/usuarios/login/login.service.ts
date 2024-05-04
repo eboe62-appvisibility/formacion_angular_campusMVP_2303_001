@@ -21,7 +21,7 @@ export class LoginService {
             console.log("El token es: ");
             console.log(this.token);
             this.cookies.set("Nuestro token", this.token)
-            this.router.navigate(['/evento']);
+            this.router.navigate(['/catalogo']);
           }
         )
       }
